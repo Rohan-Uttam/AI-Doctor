@@ -1,161 +1,160 @@
-# 🚀 Project Setup Guide
+<div align="center">
 
-This guide provides step-by-step instructions to set up your project environment, including installation of FFmpeg and PortAudio across macOS, Linux, and Windows, as well as setting up a Python virtual environment using Pipenv, pip, or conda.
-
----
-
-## 📚 Table of Contents
-
-1. [🛠 Installing FFmpeg and PortAudio](#installing-ffmpeg-and-portaudio)
-   - [🍎 macOS](#macos)
-   - [🐧 Linux](#linux)
-   - [🪟 Windows](#windows)
-2. [🐍 Setting Up a Python Virtual Environment](#setting-up-a-python-virtual-environment)
-   - [📦 Using Pipenv](#using-pipenv)
-   - [🔧 Using pip and venv](#using-pip-and-venv)
-   - [🌱 Using Conda](#using-conda)
-3. [🏃 Running the Application](#project-phases-and-python-commands)
+# 🧠⚡ **AI Doctor System — Environment Setup Guide**  
+A complete cross-platform setup for running the **4-phase AI medical assistant system**, including audio processing, speech interfaces, and Gradio UI.
 
 ---
 
-## 🛠 Installing FFmpeg and PortAudio
-
-### 🍎 macOS
-
-1. **Install Homebrew (if not already installed):**
-
-   ```bash
-   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-   ```
-
-2. **Install FFmpeg and PortAudio:**
-
-   ```bash
-   brew install ffmpeg portaudio
-   ```
+### 🛠 Technologies Included
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![FFmpeg](https://img.shields.io/badge/FFmpeg-Audio/Video-green?style=for-the-badge&logo=ffmpeg)
+![PortAudio](https://img.shields.io/badge/PortAudio-Sound-blue?style=for-the-badge)
+![pipenv](https://img.shields.io/badge/pipenv-Environment-yellow?style=for-the-badge)
+![Conda](https://img.shields.io/badge/conda-Environment-blue?style=for-the-badge)
+![Gradio](https://img.shields.io/badge/Gradio-Web_UI-orange?style=for-the-badge)
 
 ---
 
-### 🐧 Linux (Debian/Ubuntu)
+</div>
 
-1. **Update Package List:**
-
-   ```bash
-   sudo apt update
-   ```
-
-2. **Install FFmpeg and PortAudio:**
-
-   ```bash
-   sudo apt install ffmpeg portaudio19-dev
-   ```
+# 📚 **Table of Contents**
+1. 🛠 [Installing FFmpeg & PortAudio](#installing-ffmpeg-and-portaudio)  
+2. 🐍 [Setting Up Python Environment](#setting-up-a-python-virtual-environment)  
+3. 🧪 [Running Each Project Phase](#running-the-application)  
+4. 🚀 [Launch Gradio App](#launch-gradio-ui)
 
 ---
 
-### 🪟 Windows
+# 🛠 **Installing FFmpeg and PortAudio**
 
-#### 📥 Download FFmpeg:
+## 🍎 **macOS**
 
-1. Visit: https://ffmpeg.org/download.html  
-2. Go to the Windows builds section and download the latest **static build**
+### 1️⃣ Install Homebrew  
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
-#### 🗂 Extract & Set Up FFmpeg:
-
-1. Extract the ZIP to a folder (e.g., `C:\ffmpeg`)
-2. Add `C:\ffmpeg\bin` to your **System PATH**:
-   - Open Start → search "Environment Variables"
-   - Click "Edit the system environment variables"
-   - In System Properties → "Environment Variables"
-   - Under System variables → Edit the **Path**
-   - Click **New** → add: `C:\ffmpeg\bin`
-   - Click **OK**
-
-#### 🎙 Install PortAudio:
-
-1. Download binaries: http://www.portaudio.com/download.html  
-2. Follow Windows installation instructions from the site
+### 2️⃣ Install FFmpeg + PortAudio  
+```bash
+brew install ffmpeg portaudio
+```
 
 ---
 
-## 🐍 Setting Up a Python Virtual Environment
+## 🐧 **Linux (Ubuntu / Debian)**
 
-### 📦 Using Pipenv
+### 1️⃣ Update  
+```bash
+sudo apt update
+```
 
-1. **Install Pipenv:**
-
-   ```bash
-   pip install pipenv
-   ```
-
-2. **Install Dependencies:**
-
-   ```bash
-   pipenv install
-   ```
-
-3. **Activate Environment:**
-
-   ```bash
-   pipenv shell
-   ```
+### 2️⃣ Install FFmpeg + PortAudio  
+```bash
+sudo apt install ffmpeg portaudio19-dev
+```
 
 ---
 
-### 🔧 Using `pip` and `venv`
+## 🪟 **Windows**
 
-1. **Create Virtual Environment:**
+### ▶ Install FFmpeg  
+Download from:  
+https://ffmpeg.org/download.html
 
-   ```bash
-   python -m venv venv
+1. Choose **Windows static build**  
+2. Extract to: `C:\ffmpeg`  
+3. Add to PATH:  
    ```
-
-2. **Activate Environment:**
-
-   - macOS/Linux:
-
-     ```bash
-     source venv/bin/activate
-     ```
-
-   - Windows:
-
-     ```bash
-     venv\Scripts\activate
-     ```
-
-3. **Install Dependencies:**
-
-   ```bash
-   pip install -r requirements.txt
+   C:\ffmpeg\bin
    ```
+   Steps:  
+   - Search **Environment Variables**  
+   - Edit **PATH** → Add new → paste the path  
+   - Save
+
+### ▶ Install PortAudio  
+Download from:  
+http://www.portaudio.com/download.html
+
+Install using provided Windows instructions.
 
 ---
 
-### 🌱 Using Conda
+# 🐍 **Setting Up a Python Virtual Environment**
 
-1. **Create Conda Environment:**
+## 📦 **Using Pipenv (recommended)**
 
-   ```bash
-   conda create --name myenv python=3.11
-   ```
+### 1️⃣ Install Pipenv  
+```bash
+pip install pipenv
+```
 
-2. **Activate Conda Environment:**
+### 2️⃣ Install Dependencies  
+```bash
+pipenv install
+```
 
-   ```bash
-   conda activate myenv
-   ```
-
-3. **Install Dependencies:**
-
-   ```bash
-   pip install -r requirements.txt
-   ```
+### 3️⃣ Activate  
+```bash
+pipenv shell
+```
 
 ---
 
-## 🏃 Project Phases and Python Commands
+## 🔧 **Using pip + venv**
 
-### Phase 1: 🧠 Brain of the Doctor
+### 1️⃣ Create Environment  
+```bash
+python -m venv venv
+```
+
+### 2️⃣ Activate  
+
+macOS/Linux:
+```bash
+source venv/bin/activate
+```
+
+Windows:
+```bash
+venv\Scripts\activate
+```
+
+### 3️⃣ Install Requirements  
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 🌱 **Using Conda**
+
+### 1️⃣ Create Conda Environment  
+```bash
+conda create --name myenv python=3.11
+```
+
+### 2️⃣ Activate  
+```bash
+conda activate myenv
+```
+
+### 3️⃣ Install Requirements  
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# 🏃 **Project Phases and Python Commands**
+
+Below are the **four phases** of the AI Doctor workflow.
+
+---
+
+## 🧠 **Phase 1 — Brain of the Doctor**
+
+Runs the core reasoning logic.
 
 ```bash
 python brain_of_the_doctor.py
@@ -163,7 +162,9 @@ python brain_of_the_doctor.py
 
 ---
 
-### Phase 2: 🗣️ Voice of the Patient
+## 🗣️ **Phase 2 — Voice of the Patient**
+
+Captures and processes patient-side audio.
 
 ```bash
 python voice_of_the_patient.py
@@ -171,7 +172,9 @@ python voice_of_the_patient.py
 
 ---
 
-### Phase 3: 👨‍⚕️ Voice of the Doctor
+## 👨‍⚕️ **Phase 3 — Voice of the Doctor**
+
+Generates doctor-side voice outputs.
 
 ```bash
 python voice_of_the_doctor.py
@@ -179,10 +182,19 @@ python voice_of_the_doctor.py
 
 ---
 
-### Phase 4: 💻 Launch Gradio UI
+## 💻 **Phase 4 — Launch Gradio UI**
+
+Starts the web interface.
 
 ```bash
 python gradio_app.py
 ```
 
 ---
+
+<div align="center">
+
+# 🎉 **Setup Complete!**  
+You're now ready to run the full AI Doctor System across all platforms.
+
+</div>
